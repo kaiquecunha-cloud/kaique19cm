@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Somar Dois Números</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            background-color: #00000064;
+        }
+        .container {
+            background: #4d004d;
+            padding: 30px;
+            border-radius: 10px;
+            max-width: 400px;
+            margin: auto;
+            box-shadow: 0 0 10px rgb(168, 30, 168);
+        }
+        input, button {
+            padding: 1px;
+            font-size: 16px;
+            width: 100%;
+            margin-top: 10px;
+        }
+        #resultado {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Somar dois números hihi (0 a infinito)</h2>
+        <input type="number" id="num1" placeholder="Digite o primeiro número hihi (0 a infinito)" min="0" max="99999999999999999999999999999999999999999999999999999999999999999999999999">
+        <input type="number" id="num2" placeholder="Digite o segundo número hihi (0 a infinito)" min="0" max="999999999999999999999999999999999999999999999999999999999999999999999999999">
+        <button onclick="calcularSoma()">Ver resultado hihih</button>
+        <div id="resultado"></div>
+    </div>
+
+    <script>
+        function calcularSoma() {
+            const n1 = parseInt(document.getElementById('num1').value);
+            const n2 = parseInt(document.getElementById('num2').value);
+            const resultado = document.getElementById('resultado');
+
+            // Verificações
+            if (isNaN(n1) || isNaN(n2)) {
+                resultado.innerText = 'Por favor, digite dois números válidos.';
+                return;
+            }
+
+            if (n1 < 1 || n1 > 100 || n2 < 1 || n2 > 100) {
+                resultado.innerText = 'Os números devem estar entre 1 e 100.';
+                return;
+            }
+
+            const soma = n1 + n2;
+            resultado.innerText = `A soma de ${n1} + ${n2} é: ${soma}`;
+        }
+    </script>
+</body>
+</html>
